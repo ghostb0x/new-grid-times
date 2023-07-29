@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { QUERIES } from '../../constants';
+import { COLORS, QUERIES } from '../../constants';
 
 const MainStory = ({
   id,
@@ -51,7 +51,7 @@ const Abstract = styled.p`
   -webkit-box-orient: vertical;
 
   @media ${QUERIES.tabletAndUp} {
-    -webkit-line-clamp: 16;
+    -webkit-line-clamp: 18;
   }
 
   @media ${QUERIES.laptopAndUp} {

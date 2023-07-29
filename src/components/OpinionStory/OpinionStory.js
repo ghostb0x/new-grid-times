@@ -28,6 +28,14 @@ const StyledA = styled.a`
   &:not(:last-child) {
     padding-bottom: 1rem;
   }
+
+  @media ${QUERIES.tabletOnly} {
+    &:not(:first-child) {
+    border-top: revert;
+    padding-top: revert;
+  }
+    
+  }
 `;
 const Wrapper = styled.article`
   color: var(--color-gray-900);
@@ -52,6 +60,8 @@ const Avatar = styled.img`
   border-radius: 50%;
   object-fit: cover;
   margin-top: 5px;
+  margin-bottom: 8px;
+  
 `;
 
 const AuthorName = styled.p`
