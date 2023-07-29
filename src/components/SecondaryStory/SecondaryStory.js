@@ -1,18 +1,33 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { COLORS } from '../../constants';
 
 const SecondaryStory = ({ id, title, image, location, abstract }) => {
   return (
-    <a href={`/story/${id}`}>
+    <StyledA href={`/story/${id}`}>
       <Wrapper>
-        <Image alt={image.alt} src={image.src} />
+        <Image
+          alt={image.alt}
+          src={image.src}
+        />
         <Heading>{title}</Heading>
         <Abstract>{abstract}</Abstract>
       </Wrapper>
-    </a>
+    </StyledA>
   );
 };
 
+const StyledA = styled.a`
+
+  &:not(:first-child) {
+    border-top: 1px solid ${COLORS.gray[300]};
+    padding-top: 1rem;
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 1rem;
+  }
+`;
 const Wrapper = styled.article`
   display: grid;
   grid-template-areas:
@@ -45,6 +60,10 @@ const Abstract = styled.p`
   grid-area: abstract;
   font-size: 1rem;
   white-space: pre-wrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
 `;
 
 export default SecondaryStory;
