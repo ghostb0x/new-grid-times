@@ -61,7 +61,7 @@ const Wrapper = styled.div`
   gap: 48px;
   margin-bottom: 48px;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.tabletOnly} {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-areas:

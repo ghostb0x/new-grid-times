@@ -6,6 +6,7 @@ import { MARKET_DATA, SPORTS_STORIES } from '../../data';
 import MarketCard from '../MarketCard';
 import SectionTitle from '../SectionTitle';
 import MiniStory from '../MiniStory';
+import { QUERIES } from '../../constants';
 
 const SpecialtyStoryGrid = () => {
   return (
@@ -19,9 +20,13 @@ const SpecialtyStoryGrid = () => {
         >
           Markets
         </SectionTitle>
+
         <MarketCards>
           {MARKET_DATA.map((data) => (
-            <MarketCard key={data.tickerSymbol} {...data} />
+            <MarketCard
+              key={data.tickerSymbol}
+              {...data}
+            />
           ))}
         </MarketCards>
       </MarketsSection>
@@ -36,7 +41,10 @@ const SpecialtyStoryGrid = () => {
         </SectionTitle>
         <SportsStories>
           {SPORTS_STORIES.map((data) => (
-            <MiniStory key={data.id} {...data} />
+            <MiniStory
+              key={data.id}
+              {...data}
+            />
           ))}
         </SportsStories>
       </SportsSection>
@@ -51,10 +59,31 @@ const Wrapper = styled.div`
 
 const MarketsSection = styled.section``;
 
-const MarketCards = styled.div``;
+const MarketCards = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  @media ${QUERIES.tabletOnly} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+`;
 
 const SportsSection = styled.section``;
 
-const SportsStories = styled.div``;
+const SportsStories = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  @media ${QUERIES.tabletOnly} {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(5, 25%);
+    overflow: auto;
+  }
+`;
 
 export default SpecialtyStoryGrid;
