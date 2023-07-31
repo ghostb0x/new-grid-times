@@ -91,8 +91,6 @@ const MainHeader = styled(MaxWidthWrapper)`
   @media ${QUERIES.laptopAndUp} {
     justify-content: space-between;
     margin-top: 36px;
-    padding-left: 120px;
-    padding-right: 120px;
   }
 `;
 

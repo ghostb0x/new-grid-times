@@ -181,8 +181,7 @@ const MainNavArea = styled.div`
   @media ${QUERIES.tabletAndUp} {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 5rem;
-    
+    gap: 2rem 5rem;
   }
 `;
 
