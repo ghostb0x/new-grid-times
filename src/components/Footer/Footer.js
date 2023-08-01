@@ -184,17 +184,11 @@ const MainNavArea = styled.div`
   
   @media ${QUERIES.tabletAndUp} {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    /* text-align: center; */
-    /* align-items: flex-start; */
-    /* flex-direction: row; */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     flex-wrap: wrap;
     gap: 2rem 5rem;
   }
 
-  @media ${QUERIES.laptopAndUp} {
-    /* justify-content: space-between; */
-  }
 `;
 
 const MainNavHeading = styled.h2`

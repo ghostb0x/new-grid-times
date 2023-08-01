@@ -82,15 +82,16 @@ const MainHeader = styled(MaxWidthWrapper)`
   justify-content: center;
   margin-top: 32px;
   margin-bottom: 48px;
-
+  
   @media ${QUERIES.tabletAndUp} {
     margin-top: 48px;
     margin-bottom: 72px;
   }
-
+  
   @media ${QUERIES.laptopAndUp} {
-    justify-content: space-between;
-    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    margin-top: 16px;
   }
 `;
 
@@ -107,10 +108,12 @@ const SubscribeButton = styled.div`
   display: none;
 
   @media ${QUERIES.laptopAndUp} {
-    align-self: flex-end;
-    display: grid;
-    justify-items: center;
-    align-items: end;
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: end;
+    align-items: center;
   }
 `;
 
